@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User, Group
 from composeexample.models.album import Album
 from composeexample.models.musician import Musician
 from rest_framework import serializers
