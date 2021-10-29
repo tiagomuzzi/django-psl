@@ -1,12 +1,10 @@
-# Django + PostgresSQL + Docker
+# Django REST Framework + PostgresSQL + Docker
 
-This exercise is to containerize a simple Django/Postgresql application using Docker.
+This repository creates a simple REST API using Django, Postgresql and Docker.
 
 ## Pre-requisites
 
 * Docker (compatible with 20.10)
-
-* Poetry >= 1.1.11
 
 ## Instructions
 
