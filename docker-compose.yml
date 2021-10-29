@@ -6,6 +6,7 @@ services:
     volumes:
       - tutorial-volume:/var/lib/postgresql/data
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - .:/code/
     environment:
       - POSTGRES_DB=album-list
       - POSTGRES_USER=postgres

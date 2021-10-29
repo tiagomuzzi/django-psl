@@ -16,23 +16,20 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers
 
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+from composeexample.viewsets.user import UserViewSet
+from composeexample.viewsets.album import AlbumViewSet
+from composeexample.viewsets.track import TrackViewSet
+from composeexample.viewsets.musician import MusicianViewSet
 
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
-# Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
+
 router.register(r'users', UserViewSet)
+router.register(r'track', TrackViewSet)
+router.register(r'album', AlbumViewSet)
+router.register(r'musician', MusicianViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
