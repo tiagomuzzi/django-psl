@@ -12,7 +12,7 @@ This exercise is to containerize a simple Django/Postgresql application using Do
 
 1. Fork the repo and do a git clone 
   
-  git clone https://github.com/<yournamehere>/docker-flask-postgres
+  git clone git@github.com:tiagomuzzi/django-psl.git
   
 2. If you have docker installed:
 ```
