@@ -22,3 +22,5 @@ docker-compose down   # Stop and remove everything.
 
 ```
 
+The site will be available to you at `localhost:8000`.
+
