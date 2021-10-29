@@ -4,11 +4,14 @@ services:
   db:
     image: postgres
     volumes:
-    - tutorial-volume:/var/lib/postgresql/data
+      - tutorial-volume:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_DB=album-list
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    networks:
+      - app
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -16,8 +19,13 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    networks:
+      - app
     depends_on:
       - db
 
 volumes:
   tutorial-volume:
+
+networks:
+  app: {}
